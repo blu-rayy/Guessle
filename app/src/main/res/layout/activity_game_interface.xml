@@ -47,14 +47,12 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/card_back" />
 
-            <TextView
-                android:id="@+id/card1Text"
+            <ImageView
+                android:id="@+id/card1Image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="A"
-                android:textSize="24sp"
-                android:textColor="@android:color/white"
+                android:background="@drawable/card_front"
+                android:padding="8dp"
                 android:visibility="gone" />
         </FrameLayout>
 
@@ -70,16 +68,13 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/card_back" />
 
-            <TextView
-                android:id="@+id/card2Text"
+            <ImageView
+                android:id="@+id/card2Image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="B"
-                android:textSize="24sp"
-                android:textColor="@android:color/white"
-                android:visibility="gone"
-                tools:ignore="HardcodedText" />
+                android:background="@drawable/card_front"
+                android:padding="8dp"
+                android:visibility="gone" />
         </FrameLayout>
 
         <FrameLayout
@@ -94,16 +89,13 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/card_back" />
 
-            <TextView
-                android:id="@+id/card3Text"
+            <ImageView
+                android:id="@+id/card3Image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="C"
-                android:textSize="24sp"
-                android:textColor="@android:color/white"
-                android:visibility="gone"
-                tools:ignore="HardcodedText" />
+                android:background="@drawable/card_front"
+                android:padding="8dp"
+                android:visibility="gone" />
         </FrameLayout>
 
         <FrameLayout
@@ -118,16 +110,13 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/card_back" />
 
-            <TextView
-                android:id="@+id/card4Text"
+            <ImageView
+                android:id="@+id/card4Image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="D"
-                android:textSize="24sp"
-                android:textColor="@android:color/white"
-                android:visibility="gone"
-                tools:ignore="HardcodedText" />
+                android:background="@drawable/card_front"
+                android:padding="8dp"
+                android:visibility="gone" />
         </FrameLayout>
 
         <FrameLayout
@@ -142,16 +131,13 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/card_back" />
 
-            <TextView
-                android:id="@+id/card5Text"
+            <ImageView
+                android:id="@+id/card5Image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="E"
-                android:textSize="24sp"
-                android:textColor="@android:color/white"
-                android:visibility="gone"
-                tools:ignore="HardcodedText" />
+                android:background="@drawable/card_front"
+                android:padding="8dp"
+                android:visibility="gone" />
         </FrameLayout>
 
         <FrameLayout
@@ -166,16 +152,13 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/card_back" />
 
-            <TextView
-                android:id="@+id/card6Text"
+            <ImageView
+                android:id="@+id/card6Image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="F"
-                android:textSize="24sp"
-                android:textColor="@android:color/white"
-                android:visibility="gone"
-                tools:ignore="HardcodedText" />
+                android:background="@drawable/card_front"
+                android:padding="8dp"
+                android:visibility="gone" />
         </FrameLayout>
 
         <FrameLayout
@@ -190,16 +173,13 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/card_back" />
 
-            <TextView
-                android:id="@+id/card7Text"
+            <ImageView
+                android:id="@+id/card7Image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="G"
-                android:textSize="24sp"
-                android:textColor="@android:color/white"
-                android:visibility="gone"
-                tools:ignore="HardcodedText" />
+                android:background="@drawable/card_front"
+                android:padding="8dp"
+                android:visibility="gone" />
         </FrameLayout>
 
         <FrameLayout
@@ -214,16 +194,13 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/card_back" />
 
-            <TextView
-                android:id="@+id/card8Text"
+            <ImageView
+                android:id="@+id/card8Image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="H"
-                android:textSize="24sp"
-                android:textColor="@android:color/white"
-                android:visibility="gone"
-                tools:ignore="HardcodedText" />
+                android:background="@drawable/card_front"
+                android:padding="8dp"
+                android:visibility="gone" />
         </FrameLayout>
 
         <FrameLayout
@@ -238,16 +215,13 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/card_back" />
 
-            <TextView
-                android:id="@+id/card9Text"
+            <ImageView
+                android:id="@+id/card9Image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="I"
-                android:textSize="24sp"
-                android:textColor="@android:color/white"
-                android:visibility="gone"
-                tools:ignore="HardcodedText" />
+                android:background="@drawable/card_front"
+                android:padding="8dp"
+                android:visibility="gone" />
         </FrameLayout>
 
         <FrameLayout
@@ -262,16 +236,13 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/card_back" />
 
-            <TextView
-                android:id="@+id/card10Text"
+            <ImageView
+                android:id="@+id/card10Image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="J"
-                android:textSize="24sp"
-                android:textColor="@android:color/white"
-                android:visibility="gone"
-                tools:ignore="HardcodedText" />
+                android:background="@drawable/card_front"
+                android:padding="8dp"
+                android:visibility="gone" />
         </FrameLayout>
 
         <FrameLayout
@@ -286,16 +257,13 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/card_back" />
 
-            <TextView
-                android:id="@+id/card11Text"
+            <ImageView
+                android:id="@+id/card11Image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="K"
-                android:textSize="24sp"
-                android:textColor="@android:color/white"
-                android:visibility="gone"
-                tools:ignore="HardcodedText" />
+                android:background="@drawable/card_front"
+                android:padding="8dp"
+                android:visibility="gone" />
         </FrameLayout>
 
         <FrameLayout
@@ -310,16 +278,13 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/card_back" />
 
-            <TextView
-                android:id="@+id/card12Text"
+            <ImageView
+                android:id="@+id/card12Image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="L"
-                android:textSize="24sp"
-                android:textColor="@android:color/white"
-                android:visibility="gone"
-                tools:ignore="HardcodedText" />
+                android:background="@drawable/card_front"
+                android:padding="8dp"
+                android:visibility="gone" />
         </FrameLayout>
 
     </GridLayout>

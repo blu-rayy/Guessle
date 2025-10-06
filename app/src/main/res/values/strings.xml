@@ -2,4 +2,5 @@
     <string name="app_name">Memory Game</string>
     <string name="titleText">Guessle</string>
     <string name="startButton">Start</string>
+    <string name="developerName">Kristian Bautista - TN32</string>
 </resources>

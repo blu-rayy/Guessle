@@ -60,8 +60,3 @@ Additionally, this project takes **inspiration from the popular word game *Wordl
 Visit [https://www.teamcherry.com.au](https://www.teamcherry.com.au) to learn more about their amazing work.
 
 ---
-
-## License
-
-Distributed under the **MIT License**.  
-See [`LICENSE`](LICENSE) for more information.

@@ -21,6 +21,8 @@ import android.widget.GridLayout
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.postDelayed
+import androidx.core.transition.doOnEnd
 
 class GameInterface : AppCompatActivity() {
 
@@ -44,21 +46,13 @@ class GameInterface : AppCompatActivity() {
             val viewsToFadeIn = listOf(timerText, gameGrid, developerName)
             viewsToFadeIn.forEach { it.visibility = View.INVISIBLE }
 
-            window.sharedElementEnterTransition.addListener(object : Transition.TransitionListener {
-                override fun onTransitionEnd(transition: Transition) {
-                    viewsToFadeIn.forEach { view ->
-                        view.visibility = View.VISIBLE
-                        view.alpha = 0f
-                        view.animate().alpha(1f).setDuration(500).start()
-                    }
-                    transition.removeListener(this)
+            window.sharedElementEnterTransition.doOnEnd {
+                viewsToFadeIn.forEach { view ->
+                    view.visibility = View.VISIBLE
+                    view.alpha = 0f
+                    view.animate().alpha(1f).setDuration(500).start()
                 }
-
-                override fun onTransitionStart(transition: Transition) {}
-                override fun onTransitionCancel(transition: Transition) {}
-                override fun onTransitionPause(transition: Transition) {}
-                override fun onTransitionResume(transition: Transition) {}
-            })
+            }
 
             titleText.post { startPostponedEnterTransition() }
         }
@@ -179,14 +173,10 @@ class GameInterface : AppCompatActivity() {
             shake2.setTarget(card2)
             shake2.start()
 
-            val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as android.os.Vibrator
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE))
-            } else {
-                vibrator.vibrate(500)
-            }
+            val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+            vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE))
 
-            Handler(Looper.getMainLooper()).postDelayed({
+            Handler(Looper.getMainLooper()).postDelayed(1250) {
                 shake1.cancel()
                 shake2.cancel()
                 card1.rotation = 0f
@@ -196,7 +186,7 @@ class GameInterface : AppCompatActivity() {
                 image1.setBackgroundResource(R.drawable.card_front)
                 image2.setBackgroundResource(R.drawable.card_front)
                 flippedCards.clear()
-            }, 1250)
+            }
         }
     }
 

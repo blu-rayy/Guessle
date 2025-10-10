@@ -1,5 +1,3 @@
-<img width="1020" height="458" alt="image" src="https://github.com/user-attachments/assets/e8b0953a-d9be-4aaf-9adf-b5c4c92e403c" /># Memory Game for Android
-
 A classic card-matching memory game developed for the Android platform. This project is built using Kotlin and follows modern Android development practices.
 
 ## Features

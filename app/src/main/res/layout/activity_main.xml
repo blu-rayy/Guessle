@@ -9,13 +9,14 @@
 
     <TextView
         android:id="@+id/titleText"
-        android:layout_width="160dp"
-        android:layout_height="57dp"
+        android:layout_width="174dp"
+        android:layout_height="54dp"
         android:layout_gravity="center"
         android:layout_marginTop="332dp"
+        android:fontFamily="@font/nytkarnakcondensed"
         android:gravity="center"
         android:text="@string/titleText"
-        android:textSize="40sp"
+        android:textSize="50sp"
         android:transitionName="title_text_transition"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -26,13 +27,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="4dp"
+        android:fontFamily="@font/nytkarnakcondensed"
         android:text="@string/startButton"
         android:textColor="@color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@id/startButton"
         app:layout_constraintEnd_toEndOf="@id/startButton"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="@id/startButton"
         app:layout_constraintTop_toTopOf="@id/startButton"
-        app:layout_constraintVertical_bias="0.451" />
+        app:layout_constraintVertical_bias="0.444" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/startButton"

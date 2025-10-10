@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:text="Congratulations!"
+        android:fontFamily="@font/nytkarnakcondensed"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -27,6 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:text="Retry"
+            android:fontFamily="@font/nytkarnakcondensed"
             android:textColor="@color/white"
             app:backgroundTint="@color/black" />
 
@@ -35,6 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Exit"
+            android:fontFamily="@font/nytkarnakcondensed"
             android:textColor="@color/white"
             app:backgroundTint="@color/black" />
     </LinearLayout>

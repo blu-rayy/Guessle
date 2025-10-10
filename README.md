@@ -2,21 +2,15 @@ A classic card-matching memory game developed for the Android platform. This pro
 
 ## Features
 - **Classic Gameplay**: Find and match pairs of cards.  
-- **Difficulty Levels**: Choose between Easy, Medium, and Hard modes to challenge yourself.  
 - **Timed Rounds**: Each game is timed, adding an extra layer of challenge.  
 - **Clean UI**: A simple and intuitive user interface built with Material Design components.  
 
 ---
-
 ## Screenshots
 
-*(It's highly recommended to add screenshots of your app here. They make the README much more engaging.)*  
-
-## Screenshots
 | Main Menu | Game Screen |
 | :---: | :---: |
 | ![Main Menu](screenshots/MainScreen.jpg) | ![Game Screen](screenshots/GameScreen.jpg) |
-
 
 ---
 

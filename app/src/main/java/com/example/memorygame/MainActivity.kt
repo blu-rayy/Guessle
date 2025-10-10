@@ -1,8 +1,10 @@
 package com.example.memorygame
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -22,12 +24,18 @@ class MainActivity : AppCompatActivity() {
 
         // Components
         val startButton = findViewById<Button>(R.id.startButton)
+        val titleText = findViewById<TextView>(R.id.titleText)
 
         // Listeners
         startButton.setOnClickListener {
             // Go to GameInterface activity
             val intent = Intent(this, GameInterface::class.java)
-            startActivity(intent)
+            val options = ActivityOptions.makeSceneTransitionAnimation(
+                this,
+                titleText,
+                "title_text_transition"
+            )
+            startActivity(intent, options.toBundle())
         }
     }
 }

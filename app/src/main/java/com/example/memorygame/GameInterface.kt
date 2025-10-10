@@ -13,9 +13,11 @@ import android.os.Handler
 import android.os.Looper
 import android.os.VibrationEffect
 import android.os.Vibrator
+import android.transition.Transition
 import android.view.View
 import android.widget.Button
 import android.widget.FrameLayout
+import android.widget.GridLayout
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -30,7 +32,36 @@ class GameInterface : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_interface)
 
+        val isRetry = intent.getBooleanExtra("IS_RETRY", false)
+
+        val titleText = findViewById<TextView>(R.id.titleText)
         val timerText = findViewById<TextView>(R.id.timerText)
+        val gameGrid = findViewById<GridLayout>(R.id.gameGrid)
+        val developerName = findViewById<TextView>(R.id.developerName)
+
+        if (!isRetry) {
+            postponeEnterTransition()
+            val viewsToFadeIn = listOf(timerText, gameGrid, developerName)
+            viewsToFadeIn.forEach { it.visibility = View.INVISIBLE }
+
+            window.sharedElementEnterTransition.addListener(object : Transition.TransitionListener {
+                override fun onTransitionEnd(transition: Transition) {
+                    viewsToFadeIn.forEach { view ->
+                        view.visibility = View.VISIBLE
+                        view.alpha = 0f
+                        view.animate().alpha(1f).setDuration(500).start()
+                    }
+                    transition.removeListener(this)
+                }
+
+                override fun onTransitionStart(transition: Transition) {}
+                override fun onTransitionCancel(transition: Transition) {}
+                override fun onTransitionPause(transition: Transition) {}
+                override fun onTransitionResume(transition: Transition) {}
+            })
+
+            titleText.post { startPostponedEnterTransition() }
+        }
 
         val images = mutableListOf(
             R.drawable.lace, R.drawable.hornet, R.drawable.shakra, R.drawable.sherma, R.drawable.garmond, R.drawable.trobbio
@@ -83,6 +114,11 @@ class GameInterface : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        timer.cancel()
     }
 
     private fun flipCard(card: FrameLayout) {
@@ -151,6 +187,8 @@ class GameInterface : AppCompatActivity() {
             }
 
             Handler(Looper.getMainLooper()).postDelayed({
+                shake1.cancel()
+                shake2.cancel()
                 card1.rotation = 0f
                 card2.rotation = 0f
                 flipCard(card1)
@@ -163,12 +201,14 @@ class GameInterface : AppCompatActivity() {
     }
 
     private fun showGameOverPopup() {
+        if (isFinishing || isDestroyed) return
         val dialog = Dialog(this@GameInterface)
         dialog.setContentView(R.layout.popup_game_over)
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
         val retryButton = dialog.findViewById<Button>(R.id.retryButton)
         retryButton.setOnClickListener {
             val intent = Intent(this@GameInterface, GameInterface::class.java)
+            intent.putExtra("IS_RETRY", true)
             startActivity(intent)
             finish()
         }
@@ -176,6 +216,7 @@ class GameInterface : AppCompatActivity() {
     }
 
     private fun showWinPopup() {
+        if (isFinishing || isDestroyed) return
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.popup_win)
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
@@ -185,6 +226,7 @@ class GameInterface : AppCompatActivity() {
 
         retryButton.setOnClickListener {
             val intent = Intent(this, GameInterface::class.java)
+            intent.putExtra("IS_RETRY", true)
             startActivity(intent)
             finish()
         }

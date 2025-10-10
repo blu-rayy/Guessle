@@ -12,7 +12,7 @@
         android:layout_width="160dp"
         android:layout_height="57dp"
         android:layout_gravity="center"
-        android:layout_marginTop="356dp"
+        android:layout_marginTop="332dp"
         android:gravity="center"
         android:text="@string/titleText"
         android:textSize="40sp"
@@ -22,13 +22,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:text="@string/startButton"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/startButton"
+        app:layout_constraintEnd_toEndOf="@id/startButton"
+        app:layout_constraintStart_toStartOf="@id/startButton"
+        app:layout_constraintTop_toTopOf="@id/startButton"
+        app:layout_constraintVertical_bias="0.451" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/startButton"
-        style="@style/BlackButton"
         android:layout_width="160dp"
         android:layout_height="50dp"
-        android:layout_marginTop="56dp"
-        android:text="@string/startButton"
+        android:layout_marginTop="44dp"
+        app:backgroundTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
